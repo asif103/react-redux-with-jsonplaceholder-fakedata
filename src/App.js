@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Box } from "@mui/system";
+import AllPost from "./pages/AllPost";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AllUser from "./pages/AllUser";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/posts" element={<AllPost />} />
+          <Route path="/users" element={<AllUser />} />
+        </Routes>
+      </Router>
+    </Box>
   );
 }
 
